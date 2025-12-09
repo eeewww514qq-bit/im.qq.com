@@ -3,83 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>短视频播放站</title>
+    <title>有趣的网站</title>
     <style>
+        /* 设置 html 和 body 的高度为100%，并确保最小高度为视口高度 */
+        html, body {
+            height: 100%;
+            margin: 0; /* 去除默认的页边距 */
+        }
+
+        /* 背景图固定不动，背景始终覆盖屏幕 */
+        .background {
+            position: fixed; /* 使用固定定位，确保背景不动 */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEMWvppN0ptQuenPTM-k9tZJvaxEJnqwgACxyIAAjH4uFXvk9Y1ejTDmjYE.jpeg');
+            background-size: cover;
+            background-position: center;
+            z-index: -1; /* 背景图位于最底层，内容部分在上面 */
+        }
+
         body {
             font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 0;
+            color: white;
+            min-height: 100vh; /* 保证背景图始终覆盖整个视口高度 */
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f4f4f4;
+            justify-content: flex-start; /* 内容从顶部开始排列 */
+            align-items: center;  /* 居中内容 */
         }
-        .video-container {
-            position: relative;
-            width: 80%;
-            max-width: 800px;
+
+        h1 {
+            color: #fff;
+            margin-top: 10px; /* 减少顶部间距，文字和按钮更接近 */
+            font-size: 36px; /* 调整为三分之一 */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* 为标题加上阴影效果 */
         }
-        video {
-            width: 100%;
-            border-radius: 8px;
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;  /* 使按钮容器宽度为100% */
+            max-width: 400px; /* 设置按钮容器的最大宽度，避免按钮过大 */
+            margin-top: 30px; /* 减少按钮与标题的间距 */
+            margin-bottom: 20px; /* 增加底部间距，避免按钮与屏幕底部太近 */
         }
-        button {
-            padding: 10px 20px;
-            background-color: #007BFF;
+
+        .button {
+            display: flex;
+            justify-content: space-between; /* 使文字和GO按钮两侧分开 */
+            align-items: center; /* 垂直居中 */
             color: white;
-            border: none;
-            border-radius: 5px;
+            padding: 15px 0; /* 增加按钮高度 */
+            width: 80%; /* 让按钮宽度为容器的80% */
+            max-width: 100%; /* 按钮最大宽度为容器宽度的100% */
+            margin: 0 auto;
+            text-align: left; /* 让文字左对齐 */
+            font-size: 20px; /* 增大按钮字体 */
+            border-radius: 12px; /* 增加按钮圆角，显得更柔和 */
+            transition: background-color 0.3s ease, opacity 0.3s ease;
+            opacity: 0.9; /* 设置默认的透明度 */
+            user-select: none; /* 禁止文本选择 */
             cursor: pointer;
-            font-size: 16px;
-            margin-top: 20px;
+            box-sizing: border-box; /* 确保内外边距计算正确 */
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* 为按钮文字加上阴影 */
+            padding-left: 20px; /* 为文字和按钮左边增加一点间距 */
+            padding-right: 20px; /* 为右侧的GO按钮加一点间距 */
         }
-        button:hover {
-            background-color: #0056b3;
+
+        .button:hover {
+            opacity: 1; /* 悬停时完全不透明 */
+        }
+
+        /* 设置统一色调的按钮 */
+        .button1 {
+            background-color: rgba(33, 150, 243, 0.8); /* 透明的蓝色 */
+        }
+
+        .button2 {
+            background-color: rgba(3, 169, 244, 0.8); /* 透明的较浅蓝色 */
+        }
+
+        .button3 {
+            background-color: rgba(0, 188, 212, 0.8); /* 透明的海洋蓝 */
+        }
+
+        .button4 {
+            background-color: rgba(63, 81, 181, 0.8); /* 透明的深蓝色 */
+        }
+
+        .button5 {
+            background-color: rgba(25, 118, 210, 0.8); /* 透明的亮蓝色 */
+        }
+
+        .go-text {
+            font-size: 14px; /* GO 字样的字体稍微小一点 */
+            font-style: italic; /* 让 GO 字体变成斜体，增加设计感 */
+            letter-spacing: 1px; /* 适当的字间距，让它更明显 */
         }
     </style>
 </head>
 <body>
-
-    <div class="video-container">
-        <video id="videoPlayer" controls>
-            <source id="videoSource" src="" type="video/mp4">
-            您的浏览器不支持视频标签。
-        </video>
-        <button id="nextButton">播放下一步</button>
+    <div class="background"></div> <!-- 固定背景图层 -->
+    <h1>总站</h1>
+    <div class="button-container">
+        <div class="button button1" data-url="http://47xxus0sn.xagqh.cn/Mr79BrK9Yh">
+            <span>1号通道</span>
+            <span class="go-text">GO></span>
+        </div>
+        <div class="button button2" data-url="http://xchm07091025.hm92e.hmkk.dyxmf.net/client/index.html#/home">
+            <span>2号通道</span>
+            <span class="go-text">GO></span>
+        </div>
+        <div class="button button3" data-url="http://cyxx2.pmlcultureforstreaming.top/yxzhibo.php?_wv=9983&#/amazing?ic=ertgrvjf&openid=s59s12XTKmb-jIth2Xr2R">
+            <span>3号通道</span>
+            <span class="go-text">GO></span>
+        </div>
+        <div class="button button4" data-url="http://hjgnx0nn.692z.cc">
+            <span>4号通道</span>
+            <span class="go-text">GO></span>
+        </div>
+        <div class="button button5" data-url="https://tzforbu.yafpn.cn/#/?code=ufbq75">
+            <span>5号通道</span>
+            <span class="go-text">GO></span>
+        </div>
     </div>
 
     <script>
-        // 假设你的视频链接列表
-        const videoLinks = [
-            "https://eppphh.hhphxz.com/20220216/IKLJqM1H/index.m3u8",
-            "https://djfdsu.hhphxz.com/20231012/P5UgHhwL/index.m3u8",
-            "https://djfdsu.hhphxz.com/20231116/HGpoa5yv/index.m3u8"
-        ];
-
-        let currentVideoIndex = 0;
-
-        // 播放视频
-        function playVideo(index) {
-            const videoSource = document.getElementById("videoSource");
-            videoSource.src = videoLinks[index];
-            const videoPlayer = document.getElementById("videoPlayer");
-            videoPlayer.load();  // 重新加载视频
-            videoPlayer.play();  // 播放视频
-        }
-
-        // 播放下一步按钮的点击事件
-        document.getElementById("nextButton").addEventListener("click", function() {
-            currentVideoIndex++;
-            if (currentVideoIndex >= videoLinks.length) {
-                currentVideoIndex = 0;  // 如果到了最后一个视频，重新从头开始
-            }
-            playVideo(currentVideoIndex);
+        // 禁用右键菜单
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault(); // 禁用右键菜单
         });
 
-        // 初始化页面，默认播放第一个视频
-        playVideo(currentVideoIndex);
+        // 给每个按钮添加点击事件，触发跳转
+        document.querySelectorAll('.button').forEach(function(button) {
+            button.addEventListener('click', function() {
+                var url = button.getAttribute('data-url');
+                window.open(url, '_blank'); // 通过 JavaScript 跳转到链接
+            });
+        });
     </script>
-
 </body>
 </html>
