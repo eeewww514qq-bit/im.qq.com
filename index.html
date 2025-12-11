@@ -115,12 +115,14 @@
         }
 
         .image-link img {
-            width: 100%;
-            max-width: 300px; /* 设置图片的最大宽度 */
-            border-radius: 8px;
-            cursor: pointer;
-            transition: transform 0.3s ease; /* 添加点击时的动画效果 */
-        }
+    width: 100%;
+    max-width: 320px; /* 设置图片的最大宽度 */
+    height: auto; /* 自动调整高度 */
+    aspect-ratio: 2 / 1; /* 设置纵横比，宽度是高度的两倍 */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* 添加点击时的动画效果 */
+}
 
         .image-link img:hover {
             transform: scale(1.05); /* 悬停时放大效果 */
