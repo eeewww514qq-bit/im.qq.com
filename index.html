@@ -34,11 +34,19 @@
         .button-container {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 10px; /* 调整按钮之间的间距 */
             width: 100%;  /* 使按钮容器宽度为100% */
             max-width: 400px; /* 设置按钮容器的最大宽度，避免按钮过大 */
             margin-top: 30px; /* 减少按钮与标题的间距 */
             margin-bottom: 20px; /* 增加底部间距，避免按钮与屏幕底部太近 */
+        }
+
+        /* 小字样文字的样式 */
+        .button-label {
+            font-size: 12px;         /* 设置字体大小 */
+            color: #fff;            /* 设置字体颜色 */
+            margin: 0;              /* 取消文字的间距，紧贴按钮 */
+            padding: 0;             /* 确保小字没有内边距 */
         }
 
         .button {
@@ -81,24 +89,25 @@
             font-style: italic; /* 让 GO 字体变成斜体，增加设计感 */
             letter-spacing: 1px; /* 适当的字间距，让它更明显 */
         }
-
-        /* 隐藏按钮的 CSS */
-        .hidden-button {
-            display: none;
-        }
     </style>
 </head>
 <body>
-    <h1>各種軟件</h1>
+    <h1>勉费白嫖</h1>
     <div class="button-container">
+        <!-- 添加了小字 -->
+        <div class="button-label">25似下勿進👇</div>
         <div class="button button1" data-url="https://kco9770.top">
-            <span>桐椷&喲 25↓勿進</span>
+            <span>桐椷&喲</span>
             <span class="go-text">GO></span>
         </div>
+
+        <div class="button-label">两个都已破解👇免下崽 登陸即👀</div>
         <div class="button button2" data-url="http://103.86.65.174/?type=xx148">
             <span>快手椷人版</span>
             <span class="go-text">GO></span>
         </div>
+
+        <div class="button-label"></div>
         <div class="button button2" data-url="http://qf5nb.cc/reg-v1/q/19/?yqr=4002&bj=&url=https%3A%2F%2Feppphh.hhphxz.com%2F20210415%2FTKOMEjDo%2Findex.m3u8&smsType=1&wp=&tid=2">
             <span>陌陌椷人版</span>
             <span class="go-text">GO></span>
